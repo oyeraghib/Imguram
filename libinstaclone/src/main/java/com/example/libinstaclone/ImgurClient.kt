@@ -2,7 +2,6 @@ package com.example.libinstaclone
 
 import com.example.libinstaclone.converter.EnumConverterFactory
 import com.example.libinstaclone.services.ImgurAPI
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory

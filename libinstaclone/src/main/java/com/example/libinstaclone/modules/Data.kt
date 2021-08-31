@@ -10,6 +10,6 @@ data class Data(
     val featured: String?,
     @Json(name = "galleries")
     val galleries: List<Gallery>?,
-//    @Json(name = "tags")
-//    val tags: List<TagX>?
+    @Json(name = "tags")
+    val tags: List<TagX>?
 )

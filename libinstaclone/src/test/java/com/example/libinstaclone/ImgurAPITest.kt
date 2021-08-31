@@ -1,21 +1,21 @@
 package com.example.libinstaclone
 
 import com.example.libinstaclone.params.Section
-import com.example.libinstaclone.services.ImgurAPI
 import junit.framework.TestCase.assertNotNull
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
 
 class ImgurAPITest {
 
+    private val api = ImgurClient.api
+
 
     @Test
     fun `get Gallery -hot response`() {
 
-        val api = ImgurClient.api
 
         runBlocking {
-            val resp = ImgurClient.api.getGallery(Section.HOT)
+            val resp = api.getGallery(Section.HOT)
             assertNotNull(resp.body())
         }
     }
@@ -23,11 +23,10 @@ class ImgurAPITest {
     @Test
     fun `get Gallery -top response`() {
 
-        val api = ImgurClient.api
 
         runBlocking {
-            val resp = ImgurClient.api.getGallery(Section.TOP)
-            assertNotNull(resp.body())
+            val resp = api.getGallery(Section.TOP)
+            assertNotNull(resp.body()?.image?.size)
         }
     }
 
@@ -37,7 +36,7 @@ class ImgurAPITest {
 
 
         runBlocking {
-            val resp = ImgurClient.api.getTags()
+            val resp = api.getTags()
             assertNotNull(resp.body())
         }
     }

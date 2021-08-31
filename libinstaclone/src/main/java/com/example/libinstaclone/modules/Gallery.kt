@@ -12,6 +12,6 @@ data class Gallery(
     val id: Int?,
     @Json(name = "name")
     val name: String?,
-//    @Json(name = "topPost")
-//    val topPost: TopPost?
+    @Json(name = "topPost")
+    val image: Image?
 )
