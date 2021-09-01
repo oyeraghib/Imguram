@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.example.instagramclone.R
 import com.example.instagramclone.databinding.ListItemFeedBinding
 import com.example.libinstaclone.modules.Image
 
@@ -44,6 +45,9 @@ class FeedRecyclerAdapter() :
 
         val image = getItem(position)
         holder.binding.tvCaption.text = image.title.toString()
-        holder.binding.ivImage.load("https://i.imgur.com/${image.cover}.jpg")
+        holder.binding.ivImage.load("https://i.imgur.com/${image.cover}.jpg") {
+            placeholder(R.drawable.ic_placeholder)
+            error(R.drawable.ic_placeholder)
+        }
     }
 }

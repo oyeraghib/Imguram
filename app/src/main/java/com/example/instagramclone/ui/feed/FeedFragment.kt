@@ -9,6 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,7 +18,7 @@ import com.example.instagramclone.databinding.FragmentFeedBinding
 
 class FeedFragment: Fragment() {
 
-    private val feedViewModel: FeedViewModel by activityViewModels()
+    private val feedViewModel: FeedViewModel by viewModels()
     private lateinit var _binding: FragmentFeedBinding
 
     private var feedAdapter = FeedRecyclerAdapter()
@@ -40,7 +41,7 @@ class FeedFragment: Fragment() {
         _binding.rvFeed.layoutManager = LinearLayoutManager(requireContext())
         _binding.rvFeed.adapter = feedAdapter
 
-        feedViewModel.feed.observe({lifecycle}) {
+        feedViewModel.feed.observe(viewLifecycleOwner) {
 
             feedAdapter.submitList(it)
         }
