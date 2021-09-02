@@ -1,32 +1,27 @@
-package com.example.instagramclone
+package com.example.instagramclone.ui.home
 
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.instagramclone.databinding.ActivityMainBinding
-import com.example.instagramclone.ui.feed.FeedRecyclerAdapter
-import com.example.instagramclone.ui.stories.StoriesRecyclerAdapter
-import com.example.instagramclone.ui.stories.StoriesViewModel
-import com.example.libinstaclone.modules.Gallery
+import com.example.instagramclone.R
+import com.example.instagramclone.databinding.ActivityHomeBinding
 
-class MainActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
-    private val storiesViewModel by viewModels<StoriesViewModel>()
+    private lateinit var binding: ActivityHomeBinding
+    private val storiesViewModel by viewModels<HomeViewModel>()
 
     private val storiesAdapter = StoriesRecyclerAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.rvStory.apply { layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
