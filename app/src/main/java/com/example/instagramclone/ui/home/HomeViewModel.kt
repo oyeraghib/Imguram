@@ -1,16 +1,15 @@
-package com.example.instagramclone.ui.stories
+package com.example.instagramclone.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.instagramclone.data.StoriesRepo
-import com.example.libinstaclone.modules.Gallery
 import com.example.libinstaclone.modules.Tag
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class StoriesViewModel: ViewModel() {
+class HomeViewModel: ViewModel() {
 
 private val repo = StoriesRepo()
 

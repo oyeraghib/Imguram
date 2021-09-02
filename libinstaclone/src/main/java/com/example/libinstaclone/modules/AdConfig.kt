@@ -1,4 +1,4 @@
-package com.example.libinstaclone.modules.galleryResponse
+package com.example.libinstaclone.modules
 
 
 import com.squareup.moshi.Json

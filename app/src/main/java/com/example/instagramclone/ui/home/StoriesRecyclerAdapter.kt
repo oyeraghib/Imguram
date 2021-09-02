@@ -1,16 +1,15 @@
-package com.example.instagramclone.ui.stories
+package com.example.instagramclone.ui.home
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.example.instagramclone.R
 import com.example.instagramclone.databinding.ListItemStoryBinding
-import com.example.instagramclone.ui.feed.FeedRecyclerAdapter
+import com.example.instagramclone.ui.story.StoryActivity
 import com.example.libinstaclone.modules.Tag
 
 
@@ -40,5 +39,11 @@ class StoriesRecyclerAdapter () :
         val gallery = getItem(position)
         holder.binding.tvStory.text = gallery.displayName.toString()
         holder.binding.ivStory.load("https://i.imgur.com/${gallery.backgroundHash}.jpg")
+        holder.binding.root.apply {
+            setOnClickListener{
+                context.startActivity(Intent(context, StoryActivity::class.java))
+            }
+
+        }
     }
 }

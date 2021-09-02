@@ -2,6 +2,7 @@ package com.example.libinstaclone.services
 
 import com.example.libinstaclone.modules.GalleryResponse
 import com.example.libinstaclone.modules.TagsResponse
+import com.example.libinstaclone.modules.tagResponse.TagResponse
 import com.example.libinstaclone.params.Section
 import retrofit2.Call
 import retrofit2.Response
@@ -22,4 +23,9 @@ interface ImgurAPI {
 
     @GET("tags")
     suspend fun getTags() : Response<TagsResponse>
+
+    @GET("gallery/t/{tagName}")
+    suspend fun getTag(
+        @Path("tagName")tagName : String
+    ) : Response<TagResponse>
 }
