@@ -15,7 +15,7 @@ data class Tag(
     @Json(name = "description")
     val description: String?,
     @Json(name = "description_annotations")
-    val descriptionAnnotations: DescriptionAnnotations?,
+    val descriptionAnnotations: DescriptionAnnotationsX?,
     @Json(name = "display_name")
     val displayName: String?,
     @Json(name = "followers")
@@ -37,5 +37,7 @@ data class Tag(
     @Json(name = "thumbnail_is_animated")
     val thumbnailIsAnimated: Boolean?,
     @Json(name = "total_items")
-    val totalItems: Int?
+    val totalItems: Int?,
+    @Json(name = "items")
+    val items: List<Image>?,
 )

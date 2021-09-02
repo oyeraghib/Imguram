@@ -1,4 +1,4 @@
-package com.example.libinstaclone.modules.tagResponse
+package com.example.libinstaclone.modules
 
 
 import com.squareup.moshi.Json
@@ -36,8 +36,7 @@ data class Item(
     val favoriteCount: Int?,
     @Json(name = "id")
     val id: String?,
-    @Json(name = "images")
-    val images: List<Image>?,
+
     @Json(name = "images_count")
     val imagesCount: Int?,
     @Json(name = "in_gallery")

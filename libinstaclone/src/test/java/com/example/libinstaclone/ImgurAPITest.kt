@@ -35,7 +35,7 @@ class ImgurAPITest {
     fun `get Tag -aww response`() {
 
         runBlocking {
-            val resp = api.getTag("aww")
+            val resp = api.getTagGallery("aww")
             assertNotNull(resp.body()?.data)
         }
     }

@@ -14,7 +14,7 @@ import com.example.instagramclone.databinding.ActivityHomeBinding
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
-    private val storiesViewModel by viewModels<HomeViewModel>()
+    private val homeViewModel by viewModels<HomeViewModel>()
 
     private val storiesAdapter = StoriesRecyclerAdapter()
 
@@ -31,7 +31,7 @@ class HomeActivity : AppCompatActivity() {
 
 
         setupNav()
-        storiesViewModel.fetchTags()
+        homeViewModel.fetchTags()
 
     }
 
@@ -57,7 +57,7 @@ class HomeActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        storiesViewModel.tags.observe(this) {
+        homeViewModel.tags.observe(this) {
                 storiesAdapter.submitList(it)
             }
 

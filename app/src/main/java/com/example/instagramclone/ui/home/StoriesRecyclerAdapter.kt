@@ -38,12 +38,16 @@ class StoriesRecyclerAdapter () :
 
         val gallery = getItem(position)
         holder.binding.tvStory.text = gallery.displayName.toString()
-        holder.binding.ivStory.load("https://i.imgur.com/${gallery.backgroundHash}.jpg")
+        holder.binding.ivStoryIcon.load("https://i.imgur.com/${gallery.backgroundHash}.jpg")
         holder.binding.root.apply {
             setOnClickListener{
-                context.startActivity(Intent(context, StoryActivity::class.java))
-            }
+                context.startActivity(
+                    Intent(context, StoryActivity::class.java).apply {
+                        putExtra("tag", gallery.name)
 
+                    }
+                )
+            }
         }
     }
 }

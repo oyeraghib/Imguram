@@ -1,4 +1,4 @@
-package com.example.libinstaclone.modules.tagResponse
+package com.example.libinstaclone.modules
 
 
 import com.squareup.moshi.Json
@@ -7,7 +7,7 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class TagResponse(
     @Json(name = "data")
-    val `data`: Data?,
+    val `data`: Tag?,
     @Json(name = "status")
     val status: Int?,
     @Json(name = "success")

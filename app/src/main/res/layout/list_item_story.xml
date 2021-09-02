@@ -16,7 +16,7 @@
 
         <ImageView
             android:scaleType="centerCrop"
-            android:id="@+id/ivStory"
+            android:id="@+id/ivStoryIcon"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:background="@color/purple_700" />
