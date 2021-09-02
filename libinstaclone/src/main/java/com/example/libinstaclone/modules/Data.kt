@@ -11,5 +11,5 @@ data class Data(
     @Json(name = "galleries")
     val galleries: List<Gallery>?,
     @Json(name = "tags")
-    val tags: List<TagX>?
+    val tags: List<Tag>?
 )

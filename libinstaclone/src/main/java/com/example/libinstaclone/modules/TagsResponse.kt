@@ -12,4 +12,5 @@ data class TagsResponse(
     val status: Int?,
     @Json(name = "success")
     val success: Boolean?
+
 )

@@ -11,6 +11,8 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.instagramclone.databinding.ActivityMainBinding
+import com.example.instagramclone.ui.feed.FeedRecyclerAdapter
+import com.example.instagramclone.ui.stories.StoriesRecyclerAdapter
 import com.example.instagramclone.ui.stories.StoriesViewModel
 import com.example.libinstaclone.modules.Gallery
 
@@ -19,13 +21,19 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val storiesViewModel by viewModels<StoriesViewModel>()
 
+    private val storiesAdapter = StoriesRecyclerAdapter()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.rvStory.layoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
+        binding.rvStory.apply { layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+        adapter = storiesAdapter
+
+        }
+
 
         setupNav()
         storiesViewModel.fetchTags()
@@ -54,9 +62,9 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        storiesViewModel.tags.observe({lifecycle}) {
-            binding.rvStory
-        }
+        storiesViewModel.tags.observe(this) {
+                storiesAdapter.submitList(it)
+            }
 
     }
 }
