@@ -20,9 +20,12 @@ import com.example.instagramclone.databinding.FragmentFeedBinding
 
 class FeedFragment: Fragment() {
 
+    //Instance of the ViewModel
     private val feedViewModel: FeedViewModel by viewModels()
+    //view binding
     private lateinit var _binding: FragmentFeedBinding
 
+    //initialising adapter
     private var feedAdapter = FeedRecyclerAdapter()
 
 
@@ -38,9 +41,6 @@ class FeedFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-
-
 
         _binding = FragmentFeedBinding.inflate(inflater, container, false)
         _binding.rvFeed.layoutManager = LinearLayoutManager(requireContext())

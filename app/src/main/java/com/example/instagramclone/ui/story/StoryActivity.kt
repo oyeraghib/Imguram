@@ -13,9 +13,12 @@ import com.example.instagramclone.databinding.ActivityStoryBinding
 
 class StoryActivity : AppCompatActivity() {
 
+    //view model
     private  val storyViewModel by viewModels<StoryViewModel>()
+    //view binding
     private lateinit var binding: ActivityStoryBinding
 
+    //initialising adapter
     private val storyPagerAdapter = StoryPagerAdapter()
 
     private val handler = Handler(Looper.myLooper()!!)

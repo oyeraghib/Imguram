@@ -5,6 +5,8 @@ import retrofit2.Converter
 import retrofit2.Retrofit
 import java.lang.reflect.Type
 
+
+//Enum Converter for converting ENUM to String
 class EnumConverterFactory: Converter.Factory() {
 
     override fun stringConverter(

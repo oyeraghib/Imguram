@@ -12,11 +12,14 @@ import kotlinx.coroutines.launch
 
 class StoryViewModel: ViewModel() {
 
-        private val repo = StoriesRepo()
+    //instance of the repo
+    private val repo = StoriesRepo()
 
-        private val _images = MutableLiveData<List<Image>>()
+    //Mutable live data for changing values within the class
+    private val _images = MutableLiveData<List<Image>>()
 
-        val images: LiveData<List<Image>> = _images
+    //Immutable data for observing the values outside the class
+    val images: LiveData<List<Image>> = _images
 
     fun fetchTagGallery(tagName: String) = viewModelScope.launch(Dispatchers.IO ) {
         _images.postValue(repo.getTagGallery(tagName))

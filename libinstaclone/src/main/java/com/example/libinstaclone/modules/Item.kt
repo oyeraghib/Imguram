@@ -10,8 +10,6 @@ data class Item(
     val accountId: Int?,
     @Json(name = "account_url")
     val accountUrl: String?,
-    @Json(name = "ad_config")
-    val adConfig: AdConfig?,
     @Json(name = "ad_type")
     val adType: Int?,
     @Json(name = "ad_url")

@@ -11,10 +11,13 @@ import kotlinx.coroutines.launch
 
 class HomeViewModel: ViewModel() {
 
-private val repo = StoriesRepo()
+    //Instance of the repo
+    private val repo = StoriesRepo()
 
+    //Mutable Data for updating values within the class
     private val _tags = MutableLiveData<List<Tag>>()
 
+    //Immutable live data for observing from Activity
     val tags: LiveData<List<Tag>> = _tags
 
     fun fetchTags() = viewModelScope.launch(Dispatchers.IO

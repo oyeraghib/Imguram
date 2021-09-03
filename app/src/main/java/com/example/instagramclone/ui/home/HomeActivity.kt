@@ -16,9 +16,12 @@ import com.example.instagramclone.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
 
+    //view binding
     private lateinit var binding: ActivityHomeBinding
+    //view model
     private val homeViewModel by viewModels<HomeViewModel>()
 
+    //initialising adapter
     private val storiesAdapter = StoriesRecyclerAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {

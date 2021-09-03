@@ -76,8 +76,6 @@ data class Image(
     val points: Int?,
     @Json(name = "privacy")
     val privacy: String?,
-    @Json(name = "processing")
-    val processing: ProcessingX?,
     @Json(name = "score")
     val score: Int?,
     @Json(name = "section")

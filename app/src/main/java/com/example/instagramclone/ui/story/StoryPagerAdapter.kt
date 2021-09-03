@@ -54,7 +54,6 @@ class StoryPagerAdapter() :
 
         imgURL.let {
             holder.binding.ivStory.load(imgURL)
-            holder.binding.tvStory.text = imgURL
         }
 
         cacheNext(position, holder.binding.ivStory)

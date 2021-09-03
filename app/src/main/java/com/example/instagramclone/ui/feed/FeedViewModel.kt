@@ -9,10 +9,13 @@ import kotlinx.coroutines.launch
 
 class FeedViewModel: ViewModel() {
 
+    //Instance of the repo
     private val repo = FeedRepository()
 
+    //Mutable Live Data for changing values within the class
     private val _feed = MutableLiveData<List<Image>>()
 
+    //Immutable Live Data for observing from the Fragment
     val feed: LiveData<List<Image>> = _feed
 
     fun updateFeed(feedType: String) {
