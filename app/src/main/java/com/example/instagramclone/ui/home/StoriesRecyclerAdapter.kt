@@ -37,7 +37,7 @@ class StoriesRecyclerAdapter () :
     override fun onBindViewHolder(holder: StoriesViewHolder, position: Int) {
 
         val gallery = getItem(position)
-        holder.binding.tvStory.text = gallery.displayName.toString()
+        holder.binding.tvStoryIcon.text = gallery.displayName.toString()
         holder.binding.ivStoryIcon.load("https://i.imgur.com/${gallery.backgroundHash}.jpg")
         holder.binding.root.apply {
             setOnClickListener{

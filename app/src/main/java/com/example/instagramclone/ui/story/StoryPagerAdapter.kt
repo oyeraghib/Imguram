@@ -7,14 +7,17 @@ import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.ImageView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import coil.Coil
 import coil.load
+import coil.request.ImageRequest
 import com.example.instagramclone.databinding.PageItemStoryBinding
 import com.example.libinstaclone.modules.Image
-
-
+import java.lang.Exception
 
 class StoryPagerAdapter() :
     ListAdapter<Image, StoryPagerAdapter.StoryPageViewHolder>(StoryDiffCallBack()) {
@@ -50,9 +53,35 @@ class StoryPagerAdapter() :
         }
 
         imgURL.let {
-            holder.binding.ivStory.load(imgURL).apply {
+            holder.binding.ivStory.load(imgURL)
+            holder.binding.tvStory.text = imgURL
+        }
 
-            }
+        cacheNext(position, holder.binding.ivStory)
+
+
+    }
+
+    private fun cacheNext(position: Int, imageView: ImageView) {
+
+        val image = try{
+            getItem(position + 1)
+        } catch (e: Exception) {
+            null
+        }
+
+        val imgUrl = if(image?.isAlbum == true && image?.imagesCount != 0){
+            image.images!![0].link!!
+        } else {
+            image?.link
+        }
+
+        imgUrl?.let {
+            val request = ImageRequest.Builder(imageView.context)
+                .data(imgUrl)
+                .build()
+
+            Coil.imageLoader(imageView.context).enqueue(request)
         }
     }
 }

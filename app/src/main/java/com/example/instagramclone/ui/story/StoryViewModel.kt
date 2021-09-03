@@ -19,7 +19,6 @@ class StoryViewModel: ViewModel() {
         val images: LiveData<List<Image>> = _images
 
     fun fetchTagGallery(tagName: String) = viewModelScope.launch(Dispatchers.IO ) {
-
         _images.postValue(repo.getTagGallery(tagName))
 
     }

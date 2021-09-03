@@ -10,8 +10,8 @@
 
     <androidx.cardview.widget.CardView
         android:layout_margin="3dp"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="@dimen/story_head_dimen_size"
+        android:layout_height="@dimen/story_head_dimen_size"
         app:cardCornerRadius="30dp">
 
         <ImageView
@@ -19,12 +19,12 @@
             android:id="@+id/ivStoryIcon"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:background="@color/purple_700" />
+            android:background="@color/grey"/>
 
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/tvStory"
+        android:id="@+id/tvStoryIcon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
