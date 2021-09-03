@@ -7,9 +7,25 @@
     tools:context=".ui.story.StoryActivity"
     android:background="@color/black">
 
+
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vpStory"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+
+    <View
+        android:background="@color/white_transparent_50"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginTop="8dp" />
+
+    <View
+        android:id="@+id/progress_View"
+        android:scaleX="0"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginTop="8dp" />
 
 </FrameLayout>

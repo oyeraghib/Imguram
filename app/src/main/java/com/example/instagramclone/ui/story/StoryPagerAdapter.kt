@@ -58,8 +58,6 @@ class StoryPagerAdapter() :
         }
 
         cacheNext(position, holder.binding.ivStory)
-
-
     }
 
     private fun cacheNext(position: Int, imageView: ImageView) {
