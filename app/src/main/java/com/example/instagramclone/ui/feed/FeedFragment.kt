@@ -18,7 +18,7 @@ import coil.request.ImageRequest
 import com.example.instagramclone.R
 import com.example.instagramclone.databinding.FragmentFeedBinding
 
-class FeedFragment: Fragment() {
+class  FeedFragment: Fragment() {
 
     //Instance of the ViewModel
     private val feedViewModel: FeedViewModel by viewModels()
@@ -58,7 +58,7 @@ class FeedFragment: Fragment() {
 
             }
 
-            feedAdapter.submitList(it)
+                feedAdapter.submitList(it)
         }
 
         return _binding.root
