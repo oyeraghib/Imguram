@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="66dp"
-    android:layout_height="85dp"
+    android:layout_width="wrap_content"
+    android:layout_height="100dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_marginHorizontal="6dp"
-    android:layout_marginBottom="4dp"
+    android:layout_margin="8dp"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_margin="3dp"
         android:layout_width="@dimen/story_head_dimen_size"
         android:layout_height="@dimen/story_head_dimen_size"
-        app:cardCornerRadius="30dp">
+        app:cardCornerRadius="30dp"
+        app:strokeColor="@color/light_red"
+        app:strokeWidth="2dp">
 
         <ImageView
             android:scaleType="centerCrop"
@@ -21,15 +22,16 @@
             android:layout_height="match_parent"
             android:background="@color/grey"/>
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
     <TextView
         android:id="@+id/tvStoryIcon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:gravity="center"
-        android:textSize="10sp"
-        android:text="hellllo" />
+        android:textSize="12sp"
+        android:text="Test Title" />
 
 </LinearLayout>

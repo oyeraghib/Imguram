@@ -9,15 +9,13 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvStory"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
-        tools:layout_height="75dp"/>
+        android:layout_height="100dp"
+        tools:layout_height="100dp"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="match_parent"
         android:layout_height="64dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
         android:layout_gravity="bottom"
         android:background="?android:attr/windowBackground"
         app:menu="@menu/bottom_nav_menu" />
@@ -28,10 +26,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:defaultNavHost="true"
-        app:layout_constraintBottom_toTopOf="@id/nav_view"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/mobile_navigation"
         android:layout_marginTop="100dp"
         android:layout_marginBottom="64dp"/>
